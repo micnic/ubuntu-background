@@ -19,7 +19,7 @@ fs.readdir('/usr/share/backgrounds', function (error, files) {
 		return /\.jpg$/.test(element);
 	}).forEach(function (element, index, array) {
 
-		var current = path.join('/', __dirname, element);
+		var current = path.join('/usr/share/backgrounds', element);
 
 		content += '\t<static>\n';
 		content += '\t\t<duration>55.0</duration>\n';
@@ -31,9 +31,9 @@ fs.readdir('/usr/share/backgrounds', function (error, files) {
 		content += '\t\t<from>' + current + '</from>\n';
 
 		if (index < array.length - 1) {
-			content += '\t\t<to>' + path.join('/', __dirname, array[index + 1]) + '</to>\n';
+			content += '\t\t<to>' + path.join('/usr/share/backgrounds', array[index + 1]) + '</to>\n';
 		} else {
-			content += '\t\t<to>' + path.join('/', __dirname, array[0]) + '</to>\n';
+			content += '\t\t<to>' + path.join('/usr/share/backgrounds', array[0]) + '</to>\n';
 		}
 
 		content += '\t</transition>\n';
